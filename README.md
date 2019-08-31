@@ -7,3 +7,4 @@ HntzkBlogArchive
 [リンク](https://re-fort.net/HntzkBlogArchive/#/)
 
 ## 保管メンバー
+* 柿崎芽実
