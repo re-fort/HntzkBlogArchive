@@ -12,7 +12,7 @@
             div.c-blog-article__name
               | {{ author.name }}
         div.c-blog-article__text(v-html="entry.body")
-        Adsense(data-ad-client="ca-pub-6267609390272538" data-ad-slot="8585572114")
+        Adsense(data-ad-client="ca-pub-6267609390272538" data-ad-slot="8256600097")
 </template>
 
 <script>
