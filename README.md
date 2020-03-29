@@ -8,3 +8,4 @@ HntzkBlogArchive
 
 ## 保管メンバー
 * 柿崎芽実
+* 井口眞緒
