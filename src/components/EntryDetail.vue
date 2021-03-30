@@ -2,7 +2,7 @@
   .columns
     .column.is-8.is-offset-2
       a.button.is-light.is-loading(v-show="isLoading")
-      article.p-blog-article(v-for="entry in sortedEntries")
+      article.p-blog-article(v-for="entry in selectedEntries")
         div.p-blog-article__head
           div.c-blog-article__title
             | {{ entry.title }}
@@ -16,9 +16,6 @@
           div.twitter-share-button-wrapper
             a.twitter-share-button(href="https://twitter.com/share?ref_src=twsrc%5Etfw", :data-text="entry.title", :data-url="'https://re-fort.net/HntzkBlogArchive/#/blog/'+author.link+'/'+date+'/'+entry.id", data-size="large" data-show-count="false")
               | ツイート
-          div
-            router-link(:to="date+'/'+entry.id")
-              | 個別ページ
         Adsense(data-ad-client="ca-pub-6267609390272538" data-ad-slot="8256600097")
 </template>
 
@@ -28,7 +25,7 @@
   Vue.use(Adsense)
 
   export default {
-    name: 'Entry',
+    name: 'EntryDetail',
     props: {
       author: {
         type: Object,
@@ -36,19 +33,11 @@
       entries: {
         type: Array,
       },
+      id: {
+        type: String,
+      },
       date: {
         type: String,
-      },
-      sort: {
-        type: String,
-        default: 'date',
-      },
-      order: {
-        type: String,
-        default: 'asc',
-      },
-      sortEntries: {
-        type: Function,
       },
       isLoading: {
         type: Boolean,
@@ -60,8 +49,9 @@
       }
     },
     computed: {
-      sortedEntries () {
-        return this.sortEntries(this.sort, this.order)
+      selectedEntries () {
+        const entry = this.entries.filter(entry => this.id === entry.id);
+        return entry
       },
     },
   }
@@ -107,7 +97,4 @@
     display: flex
     justify-content: flex-start
     margin-bottom: 2rem
-
-  .twitter-share-button-wrapper
-    margin-right: auto
 </style>
