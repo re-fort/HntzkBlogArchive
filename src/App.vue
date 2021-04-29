@@ -29,9 +29,9 @@
             i.fa.fa-heart
             | KykzkBlogArchive
         .content.has-text-centered
-          a(href="https://re-fort.net/HntzkBlogArchive")
+          a(href="https://re-fort.net/SkrzkBlogArchive")
             i.fa.fa-heart
-            | HntzkBlogArchive
+            | SkrzkBlogArchive
         .content.has-text-centered
           a(href="https://re-fort.net/")
             i.fa.fa-heart
